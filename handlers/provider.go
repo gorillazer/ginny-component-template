@@ -8,7 +8,7 @@ import (
 )
 
 func CreateInitHandlerFn(
-// HANDLE 命令行工具锚点,请勿删除本行注释! Important! Do not delete this line
+// HANDLE 锚点请勿删除! Do not delete this line!
 ) http.InitHandlers {
 	return func(r *gin.Engine) {
 		// 在此定义路由规则 Define routing rules here, exp:
@@ -17,6 +17,6 @@ func CreateInitHandlerFn(
 }
 
 var ProviderSet = wire.NewSet(
-	// HANDLE_PROVIDER 命令行工具锚点,请勿删除本行注释! Important! Do not delete this line
+	// HANDLE_PROVIDER 锚点请勿删除! Do not delete this line!
 	CreateInitHandlerFn,
 )

@@ -5,7 +5,7 @@ import (
 
 	"github.com/google/wire"
 	"go.uber.org/zap"
-	// DATABASE_LIB 命令行工具锚点,请勿删除本行注释! Important! Do not delete this line
+	// DATABASE_LIB 锚点请勿删除! Do not delete this line!
 )
 
 // REPO_NAMERepositoryProvider
@@ -22,17 +22,17 @@ type REPO_NAMERepository struct {
 	Name string `json:"name" bson:"name"`
 
 	logger *zap.Logger
-	// STRUCT_ATTR 命令行工具锚点,请勿删除本行注释! Important! Do not delete this line
+	// STRUCT_ATTR 锚点请勿删除! Do not delete this line!
 }
 
 // NewREPO_NAMERepository
 func NewREPO_NAMERepository(
 	logger *zap.Logger,
-	// FUNC_PARAM 命令行工具锚点,请勿删除本行注释! Important! Do not delete this line
+	// FUNC_PARAM 锚点请勿删除! Do not delete this line!
 ) *REPO_NAMERepository {
 	return &REPO_NAMERepository{
 		logger: logger.With(zap.String("type", "REPO_NAMERepository")),
-		// FUNC_ATTR 命令行工具锚点,请勿删除本行注释! Important! Do not delete this line
+		// FUNC_ATTR 锚点请勿删除! Do not delete this line!
 	}
 }
 
