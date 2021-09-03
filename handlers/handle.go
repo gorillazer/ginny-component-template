@@ -3,6 +3,8 @@ package handlers
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
+
+	// "github.com/gorillazer/ginny/errs"
 	"github.com/gorillazer/ginny/res"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
