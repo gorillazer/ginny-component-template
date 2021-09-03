@@ -1,0 +1,14 @@
+syntax = "proto3";
+option go_package = "./;proto";
+
+service SERVICE_NAME { rpc Get(SERVICE_NAMEReq) returns (SERVICE_NAMERes); }
+
+message SERVICE_NAMEReq {
+  uint64 id = 1;
+  string name = 2;
+}
+
+message SERVICE_NAMERes {
+  uint64 id = 1;
+  string name = 2;
+}
