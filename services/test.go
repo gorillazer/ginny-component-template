@@ -33,7 +33,7 @@ func NewSERVICE_NAME(
 	}
 }
 
-// Get
+//
 func (p *SERVICE_NAME) Get(ctx context.Context, Id uint64) (string, error) {
 	return "name", nil
 }

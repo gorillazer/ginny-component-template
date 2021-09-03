@@ -8,11 +8,15 @@ import (
 	// DATABASE_LIB 命令行工具锚点,请勿删除本行注释! Important! Do not delete this line
 )
 
+// REPO_NAMERepositoryProvider
 var REPO_NAMERepositoryProvider = wire.NewSet(NewREPO_NAMERepository, wire.Bind(new(IREPO_NAMERepository), new(*REPO_NAMERepository)))
 
+// IREPO_NAMERepository
 type IREPO_NAMERepository interface {
 	GetUser(ctx context.Context) (*REPO_NAMERepository, error)
 }
+
+// REPO_NAMERepository
 type REPO_NAMERepository struct {
 	Id   string `json:"id" bson:"_id"`
 	Name string `json:"name" bson:"name"`
@@ -21,6 +25,7 @@ type REPO_NAMERepository struct {
 	// STRUCT_ATTR 命令行工具锚点,请勿删除本行注释! Important! Do not delete this line
 }
 
+// NewREPO_NAMERepository
 func NewREPO_NAMERepository(
 	logger *zap.Logger,
 	// FUNC_PARAM 命令行工具锚点,请勿删除本行注释! Important! Do not delete this line
@@ -32,12 +37,9 @@ func NewREPO_NAMERepository(
 }
 
 func (p *REPO_NAMERepository) GetUser(ctx context.Context) (*REPO_NAMERepository, error) {
-	user := &REPO_NAMERepository{}
-	// err := p.mysql.Find(ctx, user, "user", nil)
-	// if err != nil {
-	// 	p.logger.Error("REPO_NAMERepository.GetUser", zap.Error(err))
-	// 	return nil, err
-	// }
-	// p.redis.DB().Get(ctx, "aa").Result()
-	return user, nil
+	r := &REPO_NAMERepository{}
+	// p.mysql.Find(ctx, user, "user", nil)
+	// p.mongo.Database.Collection("user").Find()
+	// p.redis.DB().Get(ctx, "user").Result()
+	return r, nil
 }
