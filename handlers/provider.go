@@ -11,7 +11,7 @@ func CreateInitHandlerFn(
 // HANDLE 命令行工具锚点,请勿删除本行注释! Important! Do not delete this line
 ) http.InitHandlers {
 	return func(r *gin.Engine) {
-		// Define routing rules here, exp:
+		// 在此定义路由规则 Define routing rules here, exp:
 		// r.GET("/test/:id", res.Wrapper(test.Get))
 	}
 }

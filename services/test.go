@@ -7,8 +7,8 @@ import (
 	"go.uber.org/zap"
 )
 
-// SERVICE_NAMEProvider
-var SERVICE_NAMEProvider = wire.NewSet(NewSERVICE_NAME, wire.Bind(new(ISERVICE_NAME), new(*SERVICE_NAME)))
+// SERVICE_NAMEServiceProvider
+var SERVICE_NAMEServiceProvider = wire.NewSet(NewSERVICE_NAME, wire.Bind(new(ISERVICE_NAME), new(*SERVICE_NAME)))
 
 // ISERVICE_NAME
 type ISERVICE_NAME interface {
