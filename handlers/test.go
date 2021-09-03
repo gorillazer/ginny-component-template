@@ -22,6 +22,7 @@ type IHANDLE_NAMEHandler interface {
 type HANDLE_NAMEHandler struct {
 	v      *viper.Viper
 	logger *zap.Logger
+	// Introduce new dependencies here, exp:
 	// testService  *services.TestService
 }
 
@@ -33,7 +34,7 @@ func NewHANDLE_NAMEHandler(
 ) *HANDLE_NAMEHandler {
 	return &HANDLE_NAMEHandler{
 		v:      v,
-		logger: logger.With(zap.String("type", "TestHandler")),
+		logger: logger.With(zap.String("type", "HANDLE_NAMEHandler")),
 		// testService:  testService,
 	}
 }
