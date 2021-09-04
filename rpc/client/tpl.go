@@ -1,7 +1,8 @@
 package client
 
 import (
-	"MODULE_NAME/api/proto"
+	// 调用第三方系统的sever请修改此地址
+	proto "MODULE_NAME/api/proto"
 
 	consul "github.com/gorillazer/ginny-consul"
 	"github.com/gorillazer/ginny-serve/grpc"
