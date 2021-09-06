@@ -1,4 +1,4 @@
-package client
+package rpc_client
 
 import (
 	// 调用第三方系统的sever请修改此地址

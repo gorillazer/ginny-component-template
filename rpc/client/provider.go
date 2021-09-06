@@ -1,4 +1,4 @@
-package rpc_clients
+package rpc_client
 
 import (
 	"github.com/google/wire"
@@ -6,6 +6,5 @@ import (
 
 // ProviderSet
 var ProviderSet = wire.NewSet(
-// NewDetailsClient,
 // CLIENT_PROVIDER 锚点请勿删除! Do not delete this line!
 )

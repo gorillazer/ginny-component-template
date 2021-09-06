@@ -8,32 +8,32 @@ import (
 )
 
 // SERVICE_NAMEServiceProvider
-var SERVICE_NAMEServiceProvider = wire.NewSet(NewSERVICE_NAME, wire.Bind(new(ISERVICE_NAME), new(*SERVICE_NAME)))
+var SERVICE_NAMEServiceProvider = wire.NewSet(NewSERVICE_NAMEService, wire.Bind(new(ISERVICE_NAMEService), new(*SERVICE_NAMEService)))
 
-// ISERVICE_NAME
-type ISERVICE_NAME interface {
+// ISERVICE_NAMEService
+type ISERVICE_NAMEService interface {
 	Get(ctx context.Context, Id uint64) (string, error)
 }
 
-// SERVICE_NAME
-type SERVICE_NAME struct {
+// SERVICE_NAMEService
+type SERVICE_NAMEService struct {
 	logger *zap.Logger
 	// Introduce new dependencies here, exp:
 	// userRepository *repositories.UserRepository
 }
 
-// NewSERVICE_NAME
-func NewSERVICE_NAME(
+// NewSERVICE_NAMEService
+func NewSERVICE_NAMEService(
 	logger *zap.Logger,
 	// userRepository *repositories.UserRepository,
-) *SERVICE_NAME {
-	return &SERVICE_NAME{
-		logger: logger.With(zap.String("type", "SERVICE_NAME")),
+) *SERVICE_NAMEService {
+	return &SERVICE_NAMEService{
+		logger: logger.With(zap.String("type", "Hello")),
 		// userRepository: userRepository,
 	}
 }
 
 //
-func (p *SERVICE_NAME) Get(ctx context.Context, Id uint64) (string, error) {
+func (p *SERVICE_NAMEService) Get(ctx context.Context, Id uint64) (string, error) {
 	return "name", nil
 }

@@ -1,4 +1,4 @@
-package server
+package rpc_server
 
 import (
 	// SERVER_IMPORT 锚点请勿删除! Do not delete this line!

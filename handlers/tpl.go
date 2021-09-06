@@ -40,7 +40,7 @@ func NewHANDLE_NAMEHandler(
 }
 
 func (t *HANDLE_NAMEHandler) Get(c *gin.Context) (*res.Response, error) {
-	t.logger.Debug(zap.Any("HANDLE_NAMEHandler.Get", c.Params))
+	t.logger.Debug("HANDLE_NAMEHandler", zap.Any("HANDLE_NAMEHandler.Get", c.Params))
 	// name, err := t.testService.GetInfo(c)
 	// if err != nil {
 	// 	t.logger.Error(zap.Error(err))
