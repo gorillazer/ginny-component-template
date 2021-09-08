@@ -2,9 +2,11 @@ package rpc_server
 
 import (
 	"MODULE_NAME/api/proto"
+	"MODULE_NAME/internal/constants"
 	"context"
 
 	"github.com/google/wire"
+	"github.com/gorillazer/ginny/errs"
 	"go.uber.org/zap"
 )
 
@@ -35,10 +37,14 @@ func NewSERVER_NAMEServer(
 }
 
 func (s *SERVER_NAMEServer) Get(ctx context.Context, req *proto.SERVER_NAMEReq) (*proto.SERVER_NAMERes, error) {
+	if req == nil {
+		return nil, errs.New(constants.ERR_GETINFO, constants.GetErrMsg(constants.ERR_GETINFO))
+	}
 	// p, err := s.testService.Get(ctx, req.Id)
 	// if err != nil {
-	// 	return nil, errors.Wrap(err, " grpc service get detail error")
+	// 	return nil, errs.New(constants.ERR_GETINFO, constants.GetErrMsg(constants.ERR_GETINFO))
 	// }
+
 	resp := &proto.Detail{}
 
 	return resp, nil
