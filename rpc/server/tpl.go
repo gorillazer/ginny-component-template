@@ -42,6 +42,7 @@ func (s *SERVER_NAMEServer) Get(ctx context.Context, req *proto.SERVER_NAMEReq) 
 	}
 	// p, err := s.testService.Get(ctx, req.Id)
 	// if err != nil {
+	//	p.logger.Error("Get", zap.Error(err))
 	// 	return nil, errs.New(constants.ERR_GETINFO, constants.GetErrMsg(constants.ERR_GETINFO))
 	// }
 

@@ -38,7 +38,10 @@ func NewREPO_NAMERepository(
 
 func (p *REPO_NAMERepository) GetUser(ctx context.Context) (*REPO_NAMERepository, error) {
 	r := &REPO_NAMERepository{}
-	// p.mysql.Find(ctx, user, "user", nil)
+	// if err := p.mysql.Find(ctx, r, "user", nil); err != nil {
+	// 	p.logger.Error("GetUser", zap.Error(err))
+	// 	return nil, err
+	// }
 	// p.mongo.Database.Collection("user").Find()
 	// p.redis.DB().Get(ctx, "user").Result()
 	return r, nil

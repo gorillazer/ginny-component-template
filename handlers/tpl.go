@@ -43,7 +43,7 @@ func (t *HANDLE_NAMEHandler) Get(c *gin.Context) (*res.Response, error) {
 	t.logger.Debug("HANDLE_NAMEHandler", zap.Any("HANDLE_NAMEHandler.Get", c.Params))
 	// name, err := t.testService.GetInfo(c)
 	// if err != nil {
-	// 	t.logger.Error(zap.Error(err))
+	// 	t.logger.Error("Get", zap.Error(err))
 	// 	return nil, errs.New(constants.ERR_GETINFO, constants.GetErrMsg(constants.ERR_GETINFO))
 	// }
 	return res.Success("name"), nil

@@ -28,12 +28,17 @@ func NewSERVICE_NAMEService(
 	// userRepository *repositories.UserRepository,
 ) *SERVICE_NAMEService {
 	return &SERVICE_NAMEService{
-		logger: logger.With(zap.String("type", "Hello")),
+		logger: logger.With(zap.String("type", "SERVICE_NAMEService")),
 		// userRepository: userRepository,
 	}
 }
 
 //
 func (p *SERVICE_NAMEService) Get(ctx context.Context, Id uint64) (string, error) {
+	// user, err := p.userRepository.GetUser(ctx)
+	// if err != nil {
+	// 	p.logger.Error("Get", zap.Error(err))
+	// 	return "", errs.New(constants.ERR_GETINFO, constants.GetErrMsg(constants.ERR_GETINFO))
+	// }
 	return "name", nil
 }
