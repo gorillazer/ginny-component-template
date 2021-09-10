@@ -11,10 +11,10 @@ import (
 )
 
 // SERVER_NAMEServerProvider
-var SERVER_NAMEServerProvider = wire.NewSet(NewSERVER_NAMEServer, wire.Bind(new(ISERVER_NAMEServer), new(*SERVER_NAMEServer)))
+var SERVER_NAMEServerProvider = wire.NewSet(NewSERVER_NAMEServer, wire.Bind(new(iSERVER_NAMEServer), new(*SERVER_NAMEServer)))
 
-// ISERVER_NAMEServer
-type ISERVER_NAMEServer interface {
+// iSERVER_NAMEServer
+type iSERVER_NAMEServer interface {
 	Get(ctx context.Context, req *proto.SERVER_NAMEReq) (*proto.SERVER_NAMERes, error)
 }
 
@@ -42,6 +42,7 @@ func (s *SERVER_NAMEServer) Get(ctx context.Context, req *proto.SERVER_NAMEReq) 
 	}
 	// p, err := s.testService.Get(ctx, req.Id)
 	// if err != nil {
+	//	p.logger.Error("Get", zap.Error(err))
 	// 	return nil, errs.New(constants.ERR_GETINFO, constants.GetErrMsg(constants.ERR_GETINFO))
 	// }
 

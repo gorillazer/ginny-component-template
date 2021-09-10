@@ -11,10 +11,10 @@ import (
 )
 
 // HANDLE_NAMEHandlerProvider
-var HANDLE_NAMEHandlerProvider = wire.NewSet(NewHANDLE_NAMEHandler, wire.Bind(new(IHANDLE_NAMEHandler), new(*HANDLE_NAMEHandler)))
+var HANDLE_NAMEHandlerProvider = wire.NewSet(NewHANDLE_NAMEHandler, wire.Bind(new(iHANDLE_NAMEHandler), new(*HANDLE_NAMEHandler)))
 
-// IHANDLE_NAMEHandler
-type IHANDLE_NAMEHandler interface {
+// iHANDLE_NAMEHandler
+type iHANDLE_NAMEHandler interface {
 	Get(c *gin.Context) (*res.Response, error)
 }
 
@@ -43,7 +43,7 @@ func (t *HANDLE_NAMEHandler) Get(c *gin.Context) (*res.Response, error) {
 	t.logger.Debug("HANDLE_NAMEHandler", zap.Any("HANDLE_NAMEHandler.Get", c.Params))
 	// name, err := t.testService.GetInfo(c)
 	// if err != nil {
-	// 	t.logger.Error(zap.Error(err))
+	// 	t.logger.Error("Get", zap.Error(err))
 	// 	return nil, errs.New(constants.ERR_GETINFO, constants.GetErrMsg(constants.ERR_GETINFO))
 	// }
 	return res.Success("name"), nil

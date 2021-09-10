@@ -9,10 +9,10 @@ import (
 )
 
 // REPO_NAMERepositoryProvider
-var REPO_NAMERepositoryProvider = wire.NewSet(NewREPO_NAMERepository, wire.Bind(new(IREPO_NAMERepository), new(*REPO_NAMERepository)))
+var REPO_NAMERepositoryProvider = wire.NewSet(NewREPO_NAMERepository, wire.Bind(new(iREPO_NAMERepository), new(*REPO_NAMERepository)))
 
-// IREPO_NAMERepository
-type IREPO_NAMERepository interface {
+// iREPO_NAMERepository
+type iREPO_NAMERepository interface {
 	GetUser(ctx context.Context) (*REPO_NAMERepository, error)
 }
 
@@ -38,7 +38,10 @@ func NewREPO_NAMERepository(
 
 func (p *REPO_NAMERepository) GetUser(ctx context.Context) (*REPO_NAMERepository, error) {
 	r := &REPO_NAMERepository{}
-	// p.mysql.Find(ctx, user, "user", nil)
+	// if err := p.mysql.Find(ctx, r, "user", nil); err != nil {
+	// 	p.logger.Error("GetUser", zap.Error(err))
+	// 	return nil, err
+	// }
 	// p.mongo.Database.Collection("user").Find()
 	// p.redis.DB().Get(ctx, "user").Result()
 	return r, nil
