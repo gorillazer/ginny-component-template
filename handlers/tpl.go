@@ -11,10 +11,10 @@ import (
 )
 
 // HANDLE_NAMEHandlerProvider
-var HANDLE_NAMEHandlerProvider = wire.NewSet(NewHANDLE_NAMEHandler, wire.Bind(new(IHANDLE_NAMEHandler), new(*HANDLE_NAMEHandler)))
+var HANDLE_NAMEHandlerProvider = wire.NewSet(NewHANDLE_NAMEHandler, wire.Bind(new(iHANDLE_NAMEHandler), new(*HANDLE_NAMEHandler)))
 
-// IHANDLE_NAMEHandler
-type IHANDLE_NAMEHandler interface {
+// iHANDLE_NAMEHandler
+type iHANDLE_NAMEHandler interface {
 	Get(c *gin.Context) (*res.Response, error)
 }
 

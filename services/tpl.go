@@ -8,10 +8,10 @@ import (
 )
 
 // SERVICE_NAMEServiceProvider
-var SERVICE_NAMEServiceProvider = wire.NewSet(NewSERVICE_NAMEService, wire.Bind(new(ISERVICE_NAMEService), new(*SERVICE_NAMEService)))
+var SERVICE_NAMEServiceProvider = wire.NewSet(NewSERVICE_NAMEService, wire.Bind(new(iSERVICE_NAMEService), new(*SERVICE_NAMEService)))
 
-// ISERVICE_NAMEService
-type ISERVICE_NAMEService interface {
+// iSERVICE_NAMEService
+type iSERVICE_NAMEService interface {
 	Get(ctx context.Context, Id uint64) (string, error)
 }
 
