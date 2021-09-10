@@ -15,7 +15,7 @@ var SERVER_NAMEServerProvider = wire.NewSet(NewSERVER_NAMEServer, wire.Bind(new(
 
 // iSERVER_NAMEServer
 type iSERVER_NAMEServer interface {
-	Get(ctx context.Context, req *proto.SERVER_NAMEReq) (*proto.SERVER_NAMERes, error)
+	Get(ctx context.Context, req *proto.GetReq) (*proto.GetRes, error)
 }
 
 // SERVER_NAMEServer
@@ -36,7 +36,7 @@ func NewSERVER_NAMEServer(
 	}, nil
 }
 
-func (s *SERVER_NAMEServer) Get(ctx context.Context, req *proto.SERVER_NAMEReq) (*proto.SERVER_NAMERes, error) {
+func (s *SERVER_NAMEServer) Get(ctx context.Context, req *proto.GetReq) (*proto.GetRes, error) {
 	if req == nil {
 		return nil, errs.New(constants.ERR_GETINFO, constants.GetErrMsg(constants.ERR_GETINFO))
 	}
@@ -46,7 +46,7 @@ func (s *SERVER_NAMEServer) Get(ctx context.Context, req *proto.SERVER_NAMEReq) 
 	// 	return nil, errs.New(constants.ERR_GETINFO, constants.GetErrMsg(constants.ERR_GETINFO))
 	// }
 
-	resp := &proto.Detail{}
+	resp := &proto.GetRes{}
 
 	return resp, nil
 }
