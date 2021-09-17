@@ -38,7 +38,7 @@ func (p *SERVICE_NAMEService) Get(ctx context.Context, Id uint64) (string, error
 	// user, err := p.userRepository.GetUser(ctx)
 	// if err != nil {
 	// 	p.logger.Error("Get", zap.Error(err))
-	// 	return "", errs.New(constants.ERR_GETINFO, constants.GetErrMsg(constants.ERR_GETINFO))
+	// 	return "", errs.New(constants.NOT_FOUND, constants.GetErrMsg(constants.NOT_FOUND))
 	// }
 	return "name", nil
 }
