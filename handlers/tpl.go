@@ -44,7 +44,7 @@ func (t *HANDLE_NAMEHandler) Get(c *gin.Context) (*res.Response, error) {
 	// name, err := t.testService.GetInfo(c)
 	// if err != nil {
 	// 	t.logger.Error("Get", zap.Error(err))
-	// 	return nil, errs.New(constants.ERR_GETINFO, constants.GetErrMsg(constants.ERR_GETINFO))
+	// 	return nil, errs.New(constants.NOT_FOUND, constants.GetErrMsg(constants.NOT_FOUND))
 	// }
 	return res.Success("name"), nil
 }

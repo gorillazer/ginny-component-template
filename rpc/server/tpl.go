@@ -4,9 +4,10 @@ import (
 	"MODULE_NAME/api/proto"
 	"MODULE_NAME/internal/constants"
 	"context"
+	"errors"
 
 	"github.com/google/wire"
-	"github.com/gorillazer/ginny/errs"
+	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )
 
@@ -38,15 +39,17 @@ func NewSERVER_NAMEServer(
 
 func (s *SERVER_NAMEServer) Get(ctx context.Context, req *proto.GetReq) (*proto.GetRes, error) {
 	if req == nil {
-		return nil, errs.New(constants.ERR_GETINFO, constants.GetErrMsg(constants.ERR_GETINFO))
+		return nil, errors.New(constants.GetErrMsg(constants.PARAMS_INVALID))
 	}
 	// p, err := s.testService.Get(ctx, req.Id)
 	// if err != nil {
 	//	p.logger.Error("Get", zap.Error(err))
-	// 	return nil, errs.New(constants.ERR_GETINFO, constants.GetErrMsg(constants.ERR_GETINFO))
+	// 	return nil, errors.Wrap(err, constants.GetErrMsg(constants.INTERNAL_ERR))
 	// }
 
-	resp := &proto.GetRes{}
+	resp := &proto.GetRes{
+		// ...
+	}
 
 	return resp, nil
 }

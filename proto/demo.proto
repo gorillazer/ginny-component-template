@@ -1,14 +1,15 @@
 syntax = "proto3";
 option go_package = "./;proto";
 
-service SERVICE_NAME { rpc Get(SERVICE_NAMEReq) returns (SERVICE_NAMERes); }
+service SERVICE_NAME { rpc Get(GetReq) returns (GetRes); }
 
-message SERVICE_NAMEReq {
+message GetReq {
   uint64 id = 1;
   string name = 2;
 }
 
-message SERVICE_NAMERes {
+message GetRes {
   uint64 id = 1;
   string name = 2;
+  float price = 3;
 }
