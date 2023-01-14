@@ -4,7 +4,6 @@ import (
 	"context"
 
 	pb "MODULE_NAME/api/proto"
-	"MODULE_NAME/internal/config"
 
 	"github.com/google/wire"
 	"github.com/goriller/ginny"
@@ -17,19 +16,14 @@ var ProviderSet = wire.NewSet(NewService, RegisterService)
 // Service the instance for grpc proto.
 type Service struct {
 	pb.UnimplementedSERVICE_NAMEServer
-	config *config.Config
 	// Introduce new dependencies here, exp:
 	// userRepository *repo.UserRepo
 }
 
 // NewService new service that implement hello
-func NewService(
-	config *config.Config,
-) *Service {
+func NewService() *Service {
 	mux.RegisterErrorCodes(pb.ErrorCode_name)
-	return &Service{
-		config: config,
-	}
+	return &Service{}
 }
 
 // RegisterService
