@@ -7,7 +7,7 @@ import (
 
 	"github.com/google/wire"
 	"github.com/goriller/ginny"
-	"github.com/goriller/ginny/server/mux"
+	"github.com/goriller/ginny/errs"
 )
 
 // ProviderSet
@@ -22,13 +22,14 @@ type Service struct {
 
 // NewService new service that implement hello
 func NewService() *Service {
-	mux.RegisterErrorCodes(pb.ErrorCode_name)
 	return &Service{}
 }
 
 // RegisterService
 func RegisterService(ctx context.Context, sev *Service) ginny.RegistrarFunc {
 	return func(app *ginny.Application) error {
+		// 注入错误码
+		errs.RegisterErrorCodes(pb.ErrorCode_name)
 		// 注册gRPC服务
 		app.Server.RegisterService(&pb.SERVICE_NAME_ServiceDesc, sev)
 
