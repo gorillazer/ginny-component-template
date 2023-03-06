@@ -8,7 +8,7 @@ import (
 	"go.uber.org/zap"
 )
 
-// REPO_NAMERepositoryProvider
+// COMPONENT_NAMECOMPONENT_UP_TYPEProviderSet
 var COMPONENT_NAMECOMPONENT_UP_TYPEProviderSet = wire.NewSet(
 	NewCOMPONENT_NAMECOMPONENT_UP_TYPE,
 )
