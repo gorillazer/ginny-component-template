@@ -17,10 +17,7 @@ func (s *Service) METHOD_NAME(ctx context.Context, req *pb.METHOD_REQNAME) (*pb.
 	log.Debug("req", zap.Any("req", req))
 
 	if req == nil {
-		return nil, errs.New(codes.Code(pb.ErrorCode_CustomNotFound), "the error example for CustomNotFound")
-	}
-	if req.Name == "" {
-		return nil, errs.New(codes.InvalidArgument, "the error example for 4xx")
+		return nil, errs.New(codes.Code(pb.ErrorCode_ResourceNotFound), "the error example for CustomNotFound")
 	}
 
 	// Demo: 自定义日志字段
